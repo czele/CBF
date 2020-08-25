@@ -44,7 +44,7 @@ namespace CBF.Repository
 
             var con = new SqlConnection(_connectionString);
             con.Open();
-            con.Execute(query, new { jogador.Id, jogador.ClubeId, jogador.Nome, jogador.PosicaoId });
+            con.Execute(query, new { jogador.ClubeId, jogador.Nome, jogador.PosicaoId });
         }
     }
 }
