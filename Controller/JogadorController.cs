@@ -24,5 +24,11 @@ namespace CBF.Controller
         {
             return _jogadorService.Listar();
         }
+
+        [HttpGet("obter")]
+        public Jogador Obter()
+        {
+            return _jogadorService.Obter();
+        }
     } 
 }

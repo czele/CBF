@@ -46,5 +46,21 @@ namespace CBF.Repository
             con.Open();
             con.Execute(query, new { jogador.ClubeId, jogador.Nome, jogador.PosicaoId });
         }
+
+        public Jogador Obter()
+        {
+            string query = @"
+                SELECT [Id]
+                      ,[Nome]
+                      ,[ClubeId]
+                      ,[PosicaoId]
+                  FROM [dbo].[Jogador]
+                  WHERE Nome = @Nome";
+
+            var con = new SqlConnection(_connectionString);
+            con.Open();
+            var retorno = con.Query<Jogador>(query).FirstOrDefault();
+            return retorno;
+        }
     }
 }

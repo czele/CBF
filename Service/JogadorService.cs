@@ -21,5 +21,10 @@ namespace CBF.Service
         {
             _jogadorRepository.Inserir(jogador);
         }
+
+        public Jogador Obter()
+        {
+            return _jogadorRepository.Obter();
+        }
     }
 }
