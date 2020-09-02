@@ -47,7 +47,7 @@ namespace CBF.Repository
             con.Execute(query, new { jogador.ClubeId, jogador.Nome, jogador.PosicaoId });
         }
 
-        public Jogador Obter()
+        public Jogador Obter(string Nome)
         {
             string query = @"
                 SELECT [Id]
@@ -59,7 +59,7 @@ namespace CBF.Repository
 
             var con = new SqlConnection(_connectionString);
             con.Open();
-            var retorno = con.Query<Jogador>(query).FirstOrDefault();
+            var retorno = con.Query<Jogador>(query, new { Nome}).FirstOrDefault();
             return retorno;
         }
     }

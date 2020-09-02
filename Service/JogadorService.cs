@@ -22,9 +22,9 @@ namespace CBF.Service
             _jogadorRepository.Inserir(jogador);
         }
 
-        public Jogador Obter()
+        public Jogador Obter(string Nome)
         {
-            return _jogadorRepository.Obter();
+            return _jogadorRepository.Obter(Nome);
         }
     }
 }

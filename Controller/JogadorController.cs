@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace CBF.Controller
 {
     [ApiController]
-    [Route("controller")]
+    [Route("[controller]")]
     public class JogadorController : ControllerBase
     {
         private JogadorService _jogadorService = new JogadorService();
@@ -26,9 +26,9 @@ namespace CBF.Controller
         }
 
         [HttpGet("obter")]
-        public Jogador Obter()
+        public Jogador Obter(string Nome)
         {
-            return _jogadorService.Obter();
+            return _jogadorService.Obter(Nome);
         }
     } 
 }
